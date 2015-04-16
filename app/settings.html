@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base target="_parent" />
+  <title>App settings</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- build:css({.tmp,app}) styles/settings.css -->
+  <link rel="stylesheet" href="bower_components/wix-ui-lib2/ui-lib.min.css"/>
+  <link rel="stylesheet" href="styles/settings.css">
+  <!-- endbuild -->
+
+  <script type="text/javascript" src="//sslstatic.wix.com/services/js-sdk/1.42.0/js/wix.min.js"></script>
+
+</head>
+<body data-ng-app="appSettings">
+
+<div class="app" data-ng-view=""></div>
+
+<script src="bower_components/jquery/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+
+<!-- build:js({.tmp,app}) scripts/settings.js -->
+<script src="bower_components/wix-ui-lib2/ui-lib.min.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-translate/angular-translate.js"></script>
+<script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+
+<script src="scripts/services/wix.js"></script>
+<script src="scripts/settings.js"></script>
+<script src="scripts/controllers/settings.js"></script>
+<!-- endbuild -->
+</body>
+</html>
