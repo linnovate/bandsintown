@@ -2,7 +2,8 @@
 
 angular.module('wixApp', [
     'ngRoute',
-    'wix'
+    'wix',
+    'firebase'
 ])
     .config(function ($routeProvider) {
         $routeProvider

@@ -2,6 +2,7 @@
     <div class="logo">
         <img width="86" src="images/wix_icon.png" alt="logo"/>
     </div>
+
     <div class="loggedOut">
         <p translate="description">
         </p>
@@ -23,8 +24,14 @@
 </header>
 
 <div wix-ctrl="Accordion">
+    {{compId}}
+    {{origCompId}}
     <div class="acc-pane">
-        <h2>Settings pane test</h2>
+        <h3>Artist Settings: </h3>
+
+        <div class="acc-content">
+            <input ng-model="artist.name" ng-change="artist.$save()" type="text" placeholder="Artist name" />
+        </div>
     </div>
     <div class="acc-pane">
         <h3>General Settings: </h3>

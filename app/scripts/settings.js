@@ -3,7 +3,8 @@
 angular.module('appSettings', [
     'ngRoute',
     'pascalprecht.translate',
-    'wix'
+    'wix',
+    'firebase'
   ])
   .config(function ($routeProvider, $translateProvider) {
     $routeProvider
