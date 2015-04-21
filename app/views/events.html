@@ -1,42 +1,49 @@
+<!--<div id="widgetBody" style="overflow-y: scroll; height: auto; width: auto">-->
+<!--<div class="container">-->
+<!--<div class="row">-->
+<!--<div class="col-md-12 column">-->
+<!--<a href="#/index">INDEX</a>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="container">-->
+<!--<div class="row">-->
+<!--<div class="col-md-12 column">-->
+<!--<h1>{{artistname}}</h1>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="container">-->
+<!--<div class="row clearfix">-->
+<!--<div class="col-md-12 column">-->
+<!--<table class="table table-striped">-->
+<!--<thead>-->
+<!--<tr>-->
+<!--<th>Date</th>-->
+<!--<th>Title</th>-->
+<!--<th>Location</th>-->
+<!--<th>Tickets</th>-->
+<!--</tr>-->
+<!--</thead>-->
+<!--<tbody>-->
+<!--<tr ng-repeat="concert in concerts">-->
+<!--<td>{{concert.datetime | date:'medium'}}</td>-->
+<!--<td>{{concert.title}}</td>-->
+<!--<td>{{concert.venue.name}}</td>-->
+<!--<td><a href="{{concert.ticket_url}}" type="button" class="btn btn-primary">Buy Tickets</a></td>-->
+<!--</tr>-->
+<!--</tbody>-->
+<!--</table>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
 <div id="widgetBody" style="overflow-y: scroll; height: auto; width: auto">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 column">
-                <a href="#/index">INDEX</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 column">
-                <h1>{{artistname}}</h1>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row clearfix">
-            <div class="col-md-12 column">
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Title</th>
-                        <th>Location</th>
-                        <th>Tickets</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr ng-repeat="concert in concerts">
-                        <td>{{concert.datetime | date:'medium'}}</td>
-                        <td>{{concert.title}}</td>
-                        <td>{{concert.venue.name}}</td>
-                        <td><a href="{{concert.ticket_url}}" type="button" class="btn btn-primary">Buy Tickets</a></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+    <div ng-if="showWidget">
+        <script type='text/javascript' src='http://widget.bandsintown.com/javascripts/bit_widget.js'></script>
+        <a href='http://www.bandsintown.com'  class='bit-widget-initializer' data-artist='{{artistname}}' data-text-color='{{textColor}}' data-link-color='"{{linkColor}}' data-bg-color="{{widgetBackgroundColor}}" data-display-limit="{{displayLimit}}" data-bandsintown-footer-link="{{footerLink}}" data-force-narrow-layout="{{narrowLayout}}" data-notify-me="{{notifyMe}}" data-share-links="{{shareLinks}}" data-share-url="{{shareUrl}}">Bandsintown</a>
     </div>
 </div>
