@@ -16,8 +16,13 @@ angular.module('wixApp')
             $scope.textColor = hexValue(styleParams.colors.textColor);
 
         });
+        Wix.getSiteInfo( function(siteInfo) {
+            $scope.shareUrl = siteInfo.url;
+        });
+        console.log("test");
 
         var artist = $firebaseObject(ref.child('instances').child(compId));
+        console.log("artist");
         artist.$loaded(
             function() {
                 $scope.artistname= artist.name;
@@ -26,21 +31,7 @@ angular.module('wixApp')
                 $scope.narrowLayout = artist.narrowLayout;
                 $scope.notifyMe = artist.notifyMe;
                 $scope.shareLinks = artist.shareLinks;
-                Wix.getSiteInfo( function(siteInfo) {
-                    console.log(siteInfo);
-                    $scope.shareUrl = siteInfo.url;
-                    console.log($scope.shareUrl);
-                });
 
-                //
-                //$http.jsonp('http://api.bandsintown.com/artists/' + artist.name + '/events.json?api_version=2.0&app_id=bit&callback=JSON_CALLBACK')
-                //    .success(function (data, status, headers, config) {
-                //        $scope.concerts = data;
-                //
-                //    })
-                //    .error(function () {
-                //        alert('Cant get events');
-                //    });
                 $scope.showWidget = true;
 
             }
